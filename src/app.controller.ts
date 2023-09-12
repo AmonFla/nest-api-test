@@ -1,13 +1,13 @@
 import {
-  Controller,
-  Delete,
+  Controller, 
   Get,
-  HttpCode,
-  Param,
+  /*Redirect, 
   Post,
+  Param,
   Req,
-  Patch,
-  /*Redirect, */
+  HttpCode,
+  Delete,
+  Patch,*/
 } from '@nestjs/common';
 import { Request } from 'express';
 // import { Observable, of } from 'rxjs';
@@ -51,7 +51,7 @@ export class AppController {
   }
 
   @Patch('/:userId')
-  update(@Req() req: Request) {
+  update(@Req() req: Request, @Param() params: { userId: number }) {
     return req.body;
   }*/
 }
