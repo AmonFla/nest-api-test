@@ -1,4 +1,5 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Get, Post, Req } from '@nestjs/common';
+import { Request } from 'express';
 
 @Controller({})
 export class AppController {
@@ -8,7 +9,7 @@ export class AppController {
   }
 
   @Post()
-  store() {
-    return 'Post request successful';
+  store(@Req() req: Request) {
+    return req.body;
   }
 }
