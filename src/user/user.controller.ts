@@ -7,9 +7,11 @@ import {
   HttpCode,
   Delete,
   Patch,
+  Body,
 } from '@nestjs/common';
 import { Request } from 'express';
 import { UserService } from './user.service';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('/user')
 export class UserController {
@@ -36,7 +38,10 @@ export class UserController {
   }
 
   @Patch('/:userId')
-  update(@Req() req: Request, @Param() params: { userId: number }) {
-    return this.userService.update(req, params);
+  update(
+    @Body() updateUserDto: UpdateUserDto,
+    @Param() params: { userId: number },
+  ) {
+    return this.userService.update(updateUserDto, params);
   }
 }
