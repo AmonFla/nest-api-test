@@ -14,10 +14,10 @@ import { Request } from 'express';
 
 @Controller({})
 export class AppController {
-  @Get('/:userId')
+  /*@Get('/:userId')
   getUser(@Param() params: {userId: number}) {
     return { id: params.userId, name: 'Test Person', country: 'Test Country' };
-  }
+  }*/
 
   @Get()
   async findAll(): Promise<any[]> {
@@ -30,7 +30,7 @@ export class AppController {
     return of([]);
   }*/
 
-  @Post()
+  /*@Post()
   @HttpCode(202)
   store(@Req() req: Request) {
     return req.body;
@@ -45,7 +45,7 @@ export class AppController {
   }
   */
 
-  @Delete('/:userId')
+  /*@Delete('/:userId')
   delete(@Param() params: { userId: number }) {
     return { id: params.userId };
   }
@@ -53,5 +53,5 @@ export class AppController {
   @Patch('/:userId')
   update(@Req() req: Request) {
     return req.body;
-  }
+  }*/
 }
