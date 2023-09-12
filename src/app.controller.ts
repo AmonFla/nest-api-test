@@ -1,5 +1,6 @@
 import {
   Controller,
+  Delete,
   Get,
   HttpCode,
   Param,
@@ -42,4 +43,9 @@ export class AppController {
     return { url: 'http://google.com' };
   }
   */
+
+  @Delete('/:userId')
+  delete(@Param() params: { userId: number }) {
+    return { id: params.userId };
+  }
 }
