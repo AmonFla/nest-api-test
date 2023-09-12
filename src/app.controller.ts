@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Req } from '@nestjs/common';
+import { Controller, Get, Param, Post, Req, /*Redirect*/ } from '@nestjs/common';
 import { Request } from 'express';
 // import { Observable, of } from 'rxjs';
 
@@ -13,6 +13,7 @@ export class AppController {
   async findAll(): Promise<any[]> {
     return [];
   }
+
   /*
   @Get()
   findAll(): Observable<any[]> {
@@ -23,4 +24,13 @@ export class AppController {
   store(@Req() req: Request) {
     return req.body;
   }
+
+  /* 
+  // Redirect Example
+  @Get()
+  @Redirect('http:://google.com', 302)
+  getSite() {
+    return { url: 'http://google.com' };
+  }
+  */
 }
