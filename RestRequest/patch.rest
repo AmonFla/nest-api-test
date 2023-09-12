@@ -1,0 +1,7 @@
+PATCH http://localhost:3000/12
+Content-Type: application/json
+
+{
+  "name": "Test",
+  "country": "Country"
+}

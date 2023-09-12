@@ -6,6 +6,7 @@ import {
   Param,
   Post,
   Req,
+  Patch,
   /*Redirect, */
 } from '@nestjs/common';
 import { Request } from 'express';
@@ -47,5 +48,10 @@ export class AppController {
   @Delete('/:userId')
   delete(@Param() params: { userId: number }) {
     return { id: params.userId };
+  }
+
+  @Patch('/:userId')
+  update(@Req() req: Request) {
+    return req.body;
   }
 }
