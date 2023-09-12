@@ -1,4 +1,12 @@
-import { Controller, Get, Param, Post, Req, /*Redirect*/ } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  HttpCode,
+  Param,
+  Post,
+  Req,
+  /*Redirect, */
+} from '@nestjs/common';
 import { Request } from 'express';
 // import { Observable, of } from 'rxjs';
 
@@ -21,6 +29,7 @@ export class AppController {
   }*/
 
   @Post()
+  @HttpCode(202)
   store(@Req() req: Request) {
     return req.body;
   }
