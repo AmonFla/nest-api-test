@@ -15,7 +15,7 @@ import { Request } from 'express';
 @Controller({})
 export class AppController {
   @Get('/:userId')
-  getUser(@Param() params: any) {
+  getUser(@Param() params: {userId: number}) {
     return { id: params.userId, name: 'Test Person', country: 'Test Country' };
   }
 
