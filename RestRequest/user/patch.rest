@@ -3,5 +3,5 @@ Content-Type: application/json
 
 {
   "name": "Test",
-  "country": "Country"
+  "email": "Country@pipe.com"
 }

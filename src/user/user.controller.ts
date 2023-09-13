@@ -15,7 +15,7 @@ import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('/user')
 export class UserController {
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService) {}
   @Get('/:userId')
   getUser(@Param() params: { userId: number }) {
     return this.userService.getOne(params);
